@@ -13,10 +13,6 @@ checkdepends=(python-nose)
 source=(https://files.pythonhosted.org/packages/source/l/lockfile/lockfile-$pkgver.tar.gz)
 sha256sums=('6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799')
 
-prepare() {
-  cp -a lockfile-$pkgver{,-py2}
-}
-
 build() {
   cd "$srcdir/lockfile-$pkgver"
   python setup.py build
