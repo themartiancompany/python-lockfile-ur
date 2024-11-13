@@ -68,7 +68,7 @@ check() {
 package() {
   cd \
     "${srcdir}/${_pkg}-${pkgver}"
-  "${_py}" \ 
+  "${_py}" \
     setup.py \
       install \
         --root="${pkgdir}" \
