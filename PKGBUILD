@@ -50,10 +50,12 @@ sha256sums=(
 )
 
 build() {
+  ls
   cd \
     "${srcdir}/${_pkg}-${pkgver}"
-  "${_py}" \ 
-    setup.py \
+  ls
+  "${_py}" \
+    "setup.py" \
       build
 }
 
@@ -71,5 +73,8 @@ package() {
       install \
         --root="${pkgdir}" \
 	--optimize=1
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install \
+    -Dm644 \
+    LICENSE \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
